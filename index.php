@@ -29,7 +29,7 @@
                     <a class="nav-link" href="lessons/lesson1.php">Lesson 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lesson 2</a>
+                    <a class="nav-link" href="lessons/lesson2.php">Lesson 2</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="lessons/lesson3.php">Lesson 3</a>

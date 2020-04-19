@@ -26,10 +26,10 @@
                     <a class="nav-link" href="lesson1.php">Lesson 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lesson 2</a>
+                    <a class="nav-link" href="lesson2.php">Lesson 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lesson 3</a>
+                    <a class="nav-link" href="lesson3.php">Lesson 3</a>
                 </li>
             </ul>
             <span class="navbar-text">
