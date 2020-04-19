@@ -19,14 +19,14 @@
 <body>
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="img/Xlogo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+        <a class="navbar-brand" href="/">
+            <img src="../img/Xlogo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
             Education
         </a>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="lessons/lesson1.php">Lesson 1</a>
+                    <a class="nav-link" href="#">Lesson 1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Lesson 2</a>
@@ -41,7 +41,38 @@
         </div>
     </nav>
 </header>
-<h1 class="display-1 text-center main-text">Hello, world!</h1>
+<main class="p-3">
+    <?php
+
+        $array = [];
+        for ($n = 1; $n <= 10; $n++) {
+            for ($i = 1; $i <= 10; $i++) {
+                $str .= $n . "x" . $i . "=" . $i * $n . "<br>";
+            }
+            $str .= "|||";
+            if ($n == 5) {
+                $str .= "$$$";
+            }
+        }
+
+        $tr = explode("$$$", $str);
+
+        $columns1_5 = explode("|||", $tr[0]);
+        array_pop($columns1_5);
+        $columns6_10 = explode("|||", $tr[1]);
+        array_pop($columns6_10);
+
+    ?>
+
+    <table border="1" width="20%" cellpadding="5">
+        <tr>
+            <?php foreach($columns1_5 as $value): ?> <? echo "<td>" . $value . "</td>"; ?> <? endforeach; ?>
+        </tr>
+        <tr>
+            <?php foreach($columns6_10 as $value): ?> <? echo "<td>" . $value . "</td>"; ?> <? endforeach; ?>
+        </tr>
+    </table>
+</main>
 <footer class="footer mt-auto py-3 fixed-bottom">
     <div class="container">
         <span class="text-muted">all rights reserved@.</span>
