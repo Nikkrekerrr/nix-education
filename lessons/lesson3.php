@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Lesson 1</a>
+                    <a class="nav-link" href="lesson1.php">Lesson 1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Lesson 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lesson3.php">Lesson 3</a>
+                    <a class="nav-link" href="#">Lesson 3</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -38,37 +38,29 @@
         </div>
     </nav>
 </header>
-<main class="p-3">
-    <?php
+<main class="p-2">
+    <form action="" method="post">
+        <input class="" type="text" name="text"><br>
+        <button class="btn btn-success m-1" type="submit">send</button><br>
 
-        $array = [];
-        for ($n = 1; $n <= 10; $n++) {
-            for ($i = 1; $i <= 10; $i++) {
-                $str .= $n . "x" . $i . "=" . $i * $n . "<br>";
+        <?php
+
+            $text = $_POST['text'];
+
+            function mb_strrev($str) {
+                $rev = '';
+                for ($i = mb_strlen($str); $i >= 0; $i--) {
+                    $rev .= mb_substr($str,$i,1);
+                }
+
+                return $rev;
             }
-            $str .= "|||";
-            if ($n == 5) {
-                $str .= "$$$";
-            }
-        }
 
-        $tr = explode("$$$", $str);
+            echo mb_strrev($text);
 
-        $columns1_5 = explode("|||", $tr[0]);
-        array_pop($columns1_5);
-        $columns6_10 = explode("|||", $tr[1]);
-        array_pop($columns6_10);
+        ?>
 
-    ?>
-
-    <table border="1" width="20%" cellpadding="5">
-        <tr>
-            <?php foreach($columns1_5 as $value): ?> <? echo "<td>" . $value . "</td>"; ?> <? endforeach; ?>
-        </tr>
-        <tr>
-            <?php foreach($columns6_10 as $value): ?> <? echo "<td>" . $value . "</td>"; ?> <? endforeach; ?>
-        </tr>
-    </table>
+    </form>
 </main>
 <footer class="footer mt-auto py-3 fixed-bottom">
     <div class="container">
